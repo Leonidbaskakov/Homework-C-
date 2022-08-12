@@ -2,10 +2,21 @@
 Console.Write("Введите число ");
 int number1 = Convert.ToInt32(Console.ReadLine());
 
-bool Del(int number1)
-    {
-    return number1>99;
-    }
-    bool result = Del(number1);
-
-Console.WriteLine(result ? number1.ToString()[2] : "Третей цифры нет");
+if (number1>999 && number1<9999 )
+{
+int res= (number1 % 100) /10;
+Console.WriteLine($"{res}");
+}
+else
+if (number1<1000 && number1>99 )
+{
+    int res= (number1 % 10) %10;
+Console.WriteLine($"{res}");
+}
+else
+if (number1<=99)
+{
+    Console.WriteLine("Третей цифры нет");
+}
+else 
+Console.WriteLine("Число слишком длинное");
